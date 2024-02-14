@@ -26,8 +26,31 @@ class SumArray
 
 class mojWatek implements Runnable
 {
+    Thread wtk;
+    static SumArray sa = new SumArray();
+    int a[];
+    int odp;
 
+    //tworzenie nowego watku
+    mojWatek(String nazwa, int liczby[])
+    {
+        wtk = new Thread(this, nazwa);
+        wtk.start(); //uruchomienie watku
+        a = liczby;
+    }
+
+    //poczatek wykonywania nowego watku
+    @Override
+    public void run()
+    {
+        System.out.println(wtk.getName() + " startuje.");
+        odp = sa.sumArray(a);
+
+        System.out.println("Suma koncowa dla " + wtk.getName() + " wynosi " + odp + ".");
+        System.out.println(wtk.getName() + " zostal zakonczony.");
+    }
 }
+
 
 public class Main {
 }
