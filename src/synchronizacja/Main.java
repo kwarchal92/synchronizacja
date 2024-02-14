@@ -53,4 +53,11 @@ class mojWatek implements Runnable
 
 
 public class Main {
+    public static void main(String[] args)
+    {
+        int a[] = {1,2,3,4,5};
+
+        mojWatek mw1 = new mojWatek("Watek 1", a);
+        mojWatek mw2 = new mojWatek("Watek 2", a);
+    }
 }
